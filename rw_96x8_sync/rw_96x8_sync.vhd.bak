@@ -1,0 +1,48 @@
+entity rw_96x8_sync is
+	
+	port
+	(
+		-- Input ports
+		 address	: in  std_logic_vector(7 downto 0);
+		 data_in	: in  std_logic_vector(7 downto 0);
+		 writen : in std_logic;
+		 clk : std_logic;
+		 
+		-- Output ports
+		data_out	: out std_logic_vector(7 downto 0)
+	);
+end rw_96x8_sync;
+
+-- Library Clause(s) (optional)
+-- Use Clause(s) (optional)
+
+architecture arch_rw_96x8_sync of rw_96x8_sync is
+
+	type rw_type is array (128 to 223) of std_logic_vector(7 downto 0);
+	signal RW: rw type;
+   signal enable: std_logic;
+	
+begin
+    
+	 enable_proc : process(address)
+	   begin 
+		   if ( (to_integer(unsigned(address)) >= 128) and
+				   (to_integer(unsigned(address)) <= 223)) then
+				enable <= ’1’;
+		   else
+				enable <= ’0’;
+		   end if;
+		end process;
+	
+     memory : process (clk)
+      begin
+         if (clk’event and clk=’1’) then
+             if (enable=’1’ and writen =’1’) then
+              RW(to_integer(unsigned(address))) <= data_in;
+             elsif (enable='1' and write=’0’) then
+               data_out <= RW(to_integer(unsigned(address)));
+             end if;
+         end if;
+       end process;	
+
+end arch_rw_96x8_sync;

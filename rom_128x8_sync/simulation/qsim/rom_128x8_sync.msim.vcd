@@ -1,0 +1,671 @@
+$comment
+	File created using the following command:
+		vcd file rom_128x8_sync.msim.vcd -direction
+$end
+$date
+	Thu Nov 13 16:44:57 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module rom_128x8_sync_vlg_vec_tst $end
+$var reg 8 ! address [7:0] $end
+$var reg 1 " clk $end
+$var wire 1 # data_out [7] $end
+$var wire 1 $ data_out [6] $end
+$var wire 1 % data_out [5] $end
+$var wire 1 & data_out [4] $end
+$var wire 1 ' data_out [3] $end
+$var wire 1 ( data_out [2] $end
+$var wire 1 ) data_out [1] $end
+$var wire 1 * data_out [0] $end
+$var wire 1 + sampler $end
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var tri1 1 / devclrn $end
+$var tri1 1 0 devpor $end
+$var tri1 1 1 devoe $end
+$var wire 1 2 data_out[0]~output_o $end
+$var wire 1 3 data_out[1]~output_o $end
+$var wire 1 4 data_out[2]~output_o $end
+$var wire 1 5 data_out[3]~output_o $end
+$var wire 1 6 data_out[4]~output_o $end
+$var wire 1 7 data_out[5]~output_o $end
+$var wire 1 8 data_out[6]~output_o $end
+$var wire 1 9 data_out[7]~output_o $end
+$var wire 1 : clk~input_o $end
+$var wire 1 ; clk~inputclkctrl_outclk $end
+$var wire 1 < address[2]~input_o $end
+$var wire 1 = address[3]~input_o $end
+$var wire 1 > address[1]~input_o $end
+$var wire 1 ? address[0]~input_o $end
+$var wire 1 @ Mux6~0_combout $end
+$var wire 1 A address[5]~input_o $end
+$var wire 1 B address[6]~input_o $end
+$var wire 1 C address[7]~input_o $end
+$var wire 1 D address[4]~input_o $end
+$var wire 1 E data_out~0_combout $end
+$var wire 1 F data_out~1_combout $end
+$var wire 1 G data_out[1]~reg0_q $end
+$var wire 1 H data_out~2_combout $end
+$var wire 1 I data_out[2]~reg0_q $end
+$var wire 1 J data_out~3_combout $end
+$var wire 1 K data_out~4_combout $end
+$var wire 1 L data_out[3]~reg0_q $end
+$var wire 1 M data_out~5_combout $end
+$var wire 1 N data_out[4]~reg0_q $end
+$var wire 1 O Mux2~0_combout $end
+$var wire 1 P data_out~6_combout $end
+$var wire 1 Q data_out[5]~reg0_q $end
+$var wire 1 R data_out~7_combout $end
+$var wire 1 S data_out[6]~reg0_q $end
+$var wire 1 T data_out[7]~reg0_q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+0"
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+x+
+0,
+1-
+x.
+1/
+10
+11
+02
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+1E
+1F
+0G
+1H
+0I
+1J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+$end
+#15000
+1"
+1:
+1;
+0+
+1T
+1I
+1G
+19
+14
+13
+1#
+1(
+1)
+#30000
+b1 !
+0"
+1?
+0:
+0;
+1+
+1O
+1K
+0H
+1P
+#45000
+1"
+1:
+1;
+0+
+1Q
+1L
+0I
+17
+15
+04
+1%
+1'
+0(
+#60000
+b11 !
+b10 !
+0"
+0?
+1>
+0:
+0;
+1+
+0O
+1M
+0K
+1H
+0P
+#75000
+1"
+1:
+1;
+0+
+0Q
+1N
+0L
+1I
+07
+16
+05
+14
+0%
+1&
+0'
+1(
+#90000
+b11 !
+0"
+1?
+0:
+0;
+1+
+1R
+1O
+0M
+0H
+1@
+1P
+0F
+#105000
+1"
+1:
+1;
+0+
+1S
+1Q
+0N
+0I
+0G
+18
+17
+06
+04
+03
+1$
+1%
+0&
+0(
+0)
+#120000
+b111 !
+b101 !
+b100 !
+0"
+0?
+0>
+1<
+0:
+0;
+1+
+0R
+0J
+#135000
+1"
+1:
+1;
+0+
+0T
+0S
+09
+08
+0#
+0$
+#150000
+b101 !
+0"
+1?
+0:
+0;
+1+
+0O
+0P
+#165000
+1"
+1:
+1;
+0+
+0Q
+07
+0%
+#180000
+b111 !
+b110 !
+0"
+0?
+1>
+0:
+0;
+1+
+#195000
+1"
+1:
+1;
+0+
+#210000
+b111 !
+0"
+1?
+0:
+0;
+1+
+#225000
+1"
+1:
+1;
+0+
+#240000
+b1111 !
+b1011 !
+b1001 !
+b1000 !
+0"
+0?
+0>
+0<
+1=
+0:
+0;
+1+
+#255000
+1"
+1:
+1;
+0+
+#270000
+b1001 !
+0"
+1?
+0:
+0;
+1+
+#285000
+1"
+1:
+1;
+0+
+#300000
+b1011 !
+b1010 !
+0"
+0?
+1>
+0:
+0;
+1+
+#315000
+1"
+1:
+1;
+0+
+#330000
+b1011 !
+0"
+1?
+0:
+0;
+1+
+#345000
+1"
+1:
+1;
+0+
+#360000
+b1111 !
+b1101 !
+b1100 !
+0"
+0?
+0>
+1<
+0:
+0;
+1+
+#375000
+1"
+1:
+1;
+0+
+#390000
+b1101 !
+0"
+1?
+0:
+0;
+1+
+#405000
+1"
+1:
+1;
+0+
+#420000
+b1111 !
+b1110 !
+0"
+0?
+1>
+0:
+0;
+1+
+#435000
+1"
+1:
+1;
+0+
+#450000
+b1111 !
+0"
+1?
+0:
+0;
+1+
+#465000
+1"
+1:
+1;
+0+
+#480000
+b11111 !
+b10111 !
+b10011 !
+b10001 !
+b10000 !
+0"
+0?
+0>
+0<
+0=
+1D
+0:
+0;
+1+
+1H
+0@
+1J
+0E
+0J
+0H
+#495000
+1"
+1:
+1;
+0+
+#510000
+b10001 !
+0"
+1?
+0:
+0;
+1+
+1O
+#525000
+1"
+1:
+1;
+0+
+#540000
+b10011 !
+b10010 !
+0"
+0?
+1>
+0:
+0;
+1+
+0O
+#555000
+1"
+1:
+1;
+0+
+#570000
+b10011 !
+0"
+1?
+0:
+0;
+1+
+1O
+1@
+#585000
+1"
+1:
+1;
+0+
+#600000
+b10111 !
+b10101 !
+b10100 !
+0"
+0?
+0>
+1<
+0:
+0;
+1+
+#615000
+1"
+1:
+1;
+0+
+#630000
+b10101 !
+0"
+1?
+0:
+0;
+1+
+0O
+#645000
+1"
+1:
+1;
+0+
+#660000
+b10111 !
+b10110 !
+0"
+0?
+1>
+0:
+0;
+1+
+#675000
+1"
+1:
+1;
+0+
+#690000
+b10111 !
+0"
+1?
+0:
+0;
+1+
+#705000
+1"
+1:
+1;
+0+
+#720000
+b11111 !
+b11011 !
+b11001 !
+b11000 !
+0"
+0?
+0>
+0<
+1=
+0:
+0;
+1+
+#735000
+1"
+1:
+1;
+0+
+#750000
+b11001 !
+0"
+1?
+0:
+0;
+1+
+#765000
+1"
+1:
+1;
+0+
+#780000
+b11011 !
+b11010 !
+0"
+0?
+1>
+0:
+0;
+1+
+#795000
+1"
+1:
+1;
+0+
+#810000
+b11011 !
+0"
+1?
+0:
+0;
+1+
+#825000
+1"
+1:
+1;
+0+
+#840000
+b11111 !
+b11101 !
+b11100 !
+0"
+0?
+0>
+1<
+0:
+0;
+1+
+#855000
+1"
+1:
+1;
+0+
+#870000
+b11101 !
+0"
+1?
+0:
+0;
+1+
+#885000
+1"
+1:
+1;
+0+
+#900000
+b11111 !
+b11110 !
+0"
+0?
+1>
+0:
+0;
+1+
+#915000
+1"
+1:
+1;
+0+
+#930000
+b11111 !
+0"
+1?
+0:
+0;
+1+
+#945000
+1"
+1:
+1;
+0+
+#960000
+b111111 !
+b101111 !
+b100111 !
+b100011 !
+b100001 !
+b100000 !
+0"
+0?
+0>
+0<
+0=
+0D
+1A
+0:
+0;
+1+
+0@
+#975000
+1"
+1:
+1;
+0+
+#990000
+b100001 !
+0"
+1?
+0:
+0;
+1+
+1O
+#1000000
