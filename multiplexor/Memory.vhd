@@ -1,0 +1,93 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+
+entity Memory is
+	
+	port
+	(
+		address : in  std_logic_vector (7 downto 0);
+		data_in : in std_logic_vector(7 downto 0);
+		clk, reset, writen : in std_logic;
+		port_in_00, port_in_01:in  std_logic_vector(7 downto 0);  
+		data_out, port_out_xx	: buffer std_logic_vector(7 downto 0);
+		display1, display2, display3, display4 : out std_logic_vector(6 downto 0)
+	);
+end Memory;
+
+
+architecture Memory of Memory is
+   signal rom_data_out, rw_data_out, out_data : std_logic_vector(7 downto 0);
+	signal hex_msbA, hex_lsbA, hex_msbD, hex_lsbD : std_logic_vector(3 downto 0);
+	
+	component rom_128x8_sync
+		port(	address : in  std_logic_vector(7 downto 0);
+				clk : in std_logic;
+				data_out : out std_logic_vector(7 downto 0)
+			);
+	end component;
+	
+	component rw_16x8_sync
+		port(	address, data_in : in  std_logic_vector(7 downto 0);
+				writen, clock 	: in  std_logic;
+				data_out : out std_logic_vector(7 downto 0)
+			);
+	end component;
+	
+	component Output_Ports
+		port(	address, data_in	: in  std_logic_vector(7 downto 0);
+				clk, reset, writen	: in  std_logic;
+				port_out_xx	: out std_logic_vector(7 downto 0)
+			);
+	end component;
+	
+	component multiplexor
+		port(	address, rom_data_out, rw_data_out, port_in_00, port_in_01: in  std_logic_vector(7 downto 0);
+		      data_out	: out std_logic_vector(7 downto 0)
+			);
+	end component;
+	
+	component deco_7_hex
+      port(	hex : in std_logic_vector(3 downto 0);
+            seg : out std_logic_vector(6 downto 0)
+			);
+   end component;
+
+begin
+
+	ROM : rom_128x8_sync port map (address, clk, rom_data_out);
+	
+	
+	RW	: rw_16x8_sync port map (address, data_in, writen, clk, rw_data_out);
+	
+
+	OUTPUT : Output_Ports port map (address, data_in, clk, reset, writen, port_out_xx);
+	
+
+	MUX : multiplexor port map (address, rom_data_out, rw_data_out, port_in_00, port_in_01, out_data);
+	
+	
+	
+   hex_msbA <= address(7 downto 4);  
+   hex_lsbA <= address(3 downto 0);  
+
+ 
+   hex_to_7seg_msb1: deco_7_hex port map (hex_msbA, display2);
+
+   hex_to_7seg_lsb1: deco_7_hex port map (hex_lsbA, display1);
+	
+	
+
+	data_out <= out_data;
+   hex_msbD <= data_out(7 downto 4);  
+   hex_lsbD <= data_out(3 downto 0);  
+
+
+   hex_to_7seg_msb2: deco_7_hex port map (hex_msbD, display4);
+
+   hex_to_7seg_lsb2: deco_7_hex port map (hex_lsbD, display3);
+	
+	
+
+end Memory;
